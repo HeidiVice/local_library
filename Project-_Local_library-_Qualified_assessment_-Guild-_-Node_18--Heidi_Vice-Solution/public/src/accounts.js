@@ -1,16 +1,18 @@
 function findAccountById(accounts, id) {
-  // YOUR SOLUTION HERE
-  // Hint: You can use the [`find()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find) method here. 
+  return accounts.find(account => account.id === id);
 }
 
 function sortAccountsByLastName(accounts) {
-  // YOUR SOLUTION HERE
-  // Hint: You can use the [`sort()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) method here. 
+  return accounts.sort((a, b) =>
+    a.name.last.toLowerCase() > b.name.last.toLowerCase() ? 1 : -1
+  );
 }
 
 function getAccountFullNames(accounts) {
-  // YOUR SOLUTION HERE
-  // Hint: You can use the [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) method here.
+  return accounts.map((account) => {
+    const { first, last } = account.name;
+    return `${first} ${last}`;
+  });
 }
 
 // NOTE: YOU DON'T HAVE TO EDIT THE FUNCTIONS BELOW
@@ -37,6 +39,12 @@ function getBooksPossessedByAccount(account, books, authors) {
 }
 
 module.exports = {
+  findAccountById,
+  sortAccountsByLastName,
+  getAccountFullNames,
+  getTotalNumberOfBorrows,
+  getBooksPossessedByAccount,
+};
   findAccountById,
   sortAccountsByLastName,
   getAccountFullNames,
