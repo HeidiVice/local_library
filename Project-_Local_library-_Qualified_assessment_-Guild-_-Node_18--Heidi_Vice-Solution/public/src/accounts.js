@@ -45,9 +45,3 @@ module.exports = {
   getTotalNumberOfBorrows,
   getBooksPossessedByAccount,
 };
-  findAccountById,
-  sortAccountsByLastName,
-  getAccountFullNames,
-  getTotalNumberOfBorrows,
-  getBooksPossessedByAccount,
-};
